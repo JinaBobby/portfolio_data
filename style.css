@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+nav {
+    background: #333;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #64ffda;
+}
+
+/* Sections */
+section {
+    min-height: 100vh;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #544e4e;
+}
+
+/* Home Section */
+#home {
+  background-image: url('https://images.ctfassets.net/nnkxuzam4k38/4lBzkVBmJ0qvFJ90SJHEdV/7645fc49f7f1fb4a8c31a94fc4c97f4d/black-particles-background.png?w=3840&q=60&fm=webp');
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
+  height: 100vh; /* Sets the height of the section */
+  display: flex; /* Enables flexbox for centering content */
+  align-items: center; /* Vertically centers the content */
+  justify-content: center; /* Horizontally centers the content */
+  color: white; /* Adjust text color for better visibility */
+}
+
+
+
+.typewriter {
+  overflow: hidden;              /* Ensures the text is hidden as it types */
+  white-space: nowrap;           /* Keeps text on a single line */
+  border-right: 3px solid #101010; /* The blinking cursor */
+  width: 0;
+  animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
+  font-family: 'Courier New', monospace; /* Optional: Typewriter font */
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* Blinking cursor */
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Optional Styling */
+.highlight {
+  color: #ff6600;
+  font-weight: bold;
+}
+
+#home {
+  padding: 100px 0;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.highlight {
+    color: #d9e2e0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #64ffda;
+    color: #565656;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: transform 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+/* About Section */
+#about {
+    background: rgb(220, 216, 216);
+}
+
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #111010;
+}
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    flex: 1 1 55%;
+}
+
+.about-photo {
+    flex: 1 1 40%;
+    text-align: center;
+}
+
+.about-photo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Skills Section */
+#skills {
+    background: #eef1f5;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+}
+
+.skill-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.progress-bar {
+    background: #eee;
+    height: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+
+/* Projects Section */
+#projects {
+    background: white;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    padding: 20px;
+    padding-bottom: 10px;
+}
+
+.project-card p {
+    padding: 0 20px 20px;
+    color: #666;
+}
+
+/* Contact Section */
+#contact {
+    background: #c9ced3;
+}
+
+.contact-info {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 2;
+    color: #646161;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+    
+    .intro h2 {
+        font-size: 2rem;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+}
