@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lexend:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -71,6 +70,7 @@
       margin-bottom: 20px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
+      cursor: pointer;
     }
     .project-card:hover {
       transform: scale(1.02);
@@ -108,6 +108,23 @@
     }
     .contact-info a:hover {
       color: #007bff;
+    }
+    .project-images {
+      display: none;
+      margin-top: 15px;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .project-images img {
+      max-width: 100%;
+      width: 48%;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    @media (max-width: 768px) {
+      .project-images img {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -173,35 +190,27 @@
   <div class="container">
     <h2>Projects</h2>
 
-    <div class="project-card">
+    <div class="project-card" onclick="toggleImages('project1-images')">
       <h3>Sales Data Analysis & Interactive Dashboard</h3>
       <ul>
         <li>Integrated 10K+ sales records from GitHub into MySQL and designed a Star Schema for efficient reporting</li>
         <li>Implemented robust data pipelines for database management, validation, and quality control.</li>
-        <li>Utilized analytics and reporting tools...</li>
         <li>Utilized analytics and reporting tools to generate actionable business insights.</li>
       </ul>
       <div id="project1-images" class="project-images">
-    <img src="sales 1.png" alt="Data flow diagram ">
-    <img src="sales 2.png" alt="Dashboard overview">
-  </div>
+        <img src="sales 1.png" alt="Data flow diagram ">
+        <img src="sales 2.png" alt="Dashboard overview">
+      </div>
     </div>
 
     <div class="project-card">
       <h3>IMDB Sentiment Classification Project</h3>
       <ul>
-    <li>Built a sentiment classification model on IMDB movie reviews using Logistic Regression, achieving 88.5% accuracy.</li>
-    <li>Evaluated model performance using precision, recall, F1-score, and confusion matrix.</li>
-    <li>Applied SHAP and LIME for model explainability and feature impact analysis.</li>
+        <li>Built a sentiment classification model on IMDB movie reviews using Logistic Regression, achieving 88.5% accuracy.</li>
+        <li>Evaluated model performance using precision, recall, F1-score, and confusion matrix.</li>
+        <li>Applied SHAP and LIME for model explainability and feature impact analysis.</li>
       </ul>
-      <script>
-  function toggleImages(id) {
-    const images = document.getElementById(id);
-    images.style.display = images.style.display === 'block' ? 'none' : 'block';
-  }
-</script>
     </div>
-   
 
     <div class="project-card">
       <h3>MedEase AI: Intelligent Document Analyzer</h3>
@@ -215,39 +224,36 @@
     <div class="project-card">
       <h3>Rainfall Prediction using ML</h3>
       <ul>
-          <li>Built a classification model to predict rainfall using real-world weather data.</li>
-    <li>Performed EDA, data cleaning, label encoding, and feature scaling.</li>
-    <li>Trained and evaluated models like Random Forest, SVM, KNN, achieving 85%+ accuracy.</li>
-    <li>Used confusion matrix and ROC curve for performance analysis.</li>
+        <li>Built a classification model to predict rainfall using real-world weather data.</li>
+        <li>Performed EDA, data cleaning, label encoding, and feature scaling.</li>
+        <li>Trained and evaluated models like Random Forest, SVM, KNN, achieving 85%+ accuracy.</li>
+        <li>Used confusion matrix and ROC curve for performance analysis.</li>
       </ul>
     </div>
 
     <div class="project-card">
       <h3>Online Voting System</h3>
       <ul>
-           <li>Built a secure Flask web application with MySQL backend for online voting, featuring user login via Aadhaar, password hashed with pbkdf2_sha256, and reCAPTCHA.</li>
-    <li>Designed normalized tables for voters, candidates with party images, and admins; enforced single-vote logic and session control.</li>
-    <li>Enabled admin-only result access with real-time graphical dashboards showing regional voting statistics.</li>
- 
+        <li>Built a secure Flask web application with MySQL backend for online voting.</li>
+        <li>Enabled admin-only result access with real-time graphical dashboards.</li>
       </ul>
     </div>
 
     <div class="project-card">
       <h3>Fashion Prediction Neural Network</h3>
       <ul>
-          <li>Built a neural network using TensorFlow and Keras to classify clothing images from the Fashion MNIST dataset into 10 categories such as shirts, sneakers, and dresses.</li>
-    <li>Achieved over 91% training accuracy and ~88% test accuracy using a simple architecture with one hidden dense layer and softmax output.</li>
-    <li>Visualized predictions and verified model performance with test images.</li>
+        <li>Built a neural network using TensorFlow and Keras to classify clothing images from the Fashion MNIST dataset.</li>
+        <li>Achieved over 91% training accuracy and ~88% test accuracy.</li>
+        <li>Visualized predictions and verified model performance with test images.</li>
       </ul>
       <a href="https://github.com/JinaBobby/fashion_prediction_neural_network" target="_blank" class="btn">GitHub Repo</a>
     </div>
-    <br></br>
 
     <div class="project-card">
       <h3>Product Comparison Chatbot</h3>
       <ul>
-    <li>Built using Groq API and LLaMA 3, this chatbot delivers ultra-fast, AI-powered product comparisons.</li>
-    <li>Ask anything like "iPhone 15 vs Galaxy S24" and get instant, accurate insights — features, specs, pros & cons — in real time.</li>
+        <li>Built using Groq API and LLaMA 3, this chatbot delivers ultra-fast, AI-powered product comparisons.</li>
+        <li>Ask anything like "iPhone 15 vs Galaxy S24" and get instant, accurate insights.</li>
       </ul>
       <a href="https://huggingface.co/spaces/JinaBobby/Productcomparisonchatbot" target="_blank" class="btn">Demo</a>
     </div>
@@ -279,6 +285,13 @@
     </div>
   </div>
 </section>
+
+<script>
+  function toggleImages(id) {
+    const container = document.getElementById(id);
+    container.style.display = container.style.display === 'flex' ? 'none' : 'flex';
+  }
+</script>
 
 </body>
 </html>
