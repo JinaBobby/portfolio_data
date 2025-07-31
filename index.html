@@ -292,13 +292,16 @@
     </div>
   </div>
 </section>
-
 <script>
   function toggleImages(id) {
     const container = document.getElementById(id);
-    container.style.display = container.style.display === 'flex' ? 'none' : 'flex';
+    if (!container) return;
+
+    const current = window.getComputedStyle(container).display;
+    container.style.display = (current === 'none') ? 'flex' : 'none';
   }
 </script>
+
 
 </body>
 </html>
