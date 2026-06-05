@@ -255,7 +255,7 @@
            <img src="dashboard2.png">
   </div>
    
-      <a" target="_blank" class="btn">view</a>
+     <a href="#" target="_blank" class="btn">View</a>
     </div>
 
     
@@ -363,15 +363,22 @@
   </div>
 </section>
 <script>
-  function toggleImages(id) {
+function toggleImages(id) {
+    console.log("Clicked:", id);
+
     const container = document.getElementById(id);
-    if (!container) return;
+
+    console.log(container);
+
+    if (!container) {
+        alert("Container not found: " + id);
+        return;
+    }
 
     const current = window.getComputedStyle(container).display;
     container.style.display = (current === 'none') ? 'flex' : 'none';
-  }
+}
 </script>
-
 
 </body>
 </html>
